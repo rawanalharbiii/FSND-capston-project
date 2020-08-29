@@ -20,14 +20,14 @@ This will install all of the required packages we selected within the `requireme
 
 ##### Key Dependencies
 
-- [Flask](http://flask.pocoo.org/)  is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+- [Flask]
 
-- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py.
+- [SQLAlchemy]
 
 
-- [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS. 
+- [jose]
 
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
+- [Flask-CORS]
 
 
 ## Running the server
@@ -41,14 +41,15 @@ export FLASK_APP=app.py
 export FLASK_ENV=development
 flask run
 
-```
-or just:
+
+or 
 
 source setup.sh 
 python app.py
-```
+
 
 ## Roles and Permissions:
+
 - Casting Assistant
     - Can view actors and movies
         - 'get:movies'
@@ -73,9 +74,11 @@ python app.py
 Note: Inssed `setup.sh` file we have a token for each role
 
 ## Deployment
+
 The API is deployed on Heroku [project link](https://rawani.herokuapp.com/).
 
 ## Endpoints
+
 - GET '/movies'
 - GET '/actors'
 - POST '/movies'
@@ -85,7 +88,7 @@ The API is deployed on Heroku [project link](https://rawani.herokuapp.com/).
 - DELETE '/movies/<int:movie_id>'
 - DELETE '/actors/<int:actor_id>'
 
-
+```
 GET '/movies'
 - Fetches a dictionary of movies 
 - Request Arguments: None
@@ -114,6 +117,7 @@ GET '/movies'
 }
 ```
 
+```
 GET '/actors'
 - Fetches a dictionary of actors 
 - Request Arguments: None
@@ -139,6 +143,7 @@ GET '/actors'
 }
 ```
 
+```
 POST '/movies'
 - Post a movie and persist it to the database
 - Request Arguments: A JSON with title, release_date  
@@ -149,6 +154,8 @@ POST '/movies'
     "movie id": 13,
     "success": true
 }
+```
+
 ```
 POST '/actors'
 - Post actor and persist it to the database
@@ -161,6 +168,7 @@ POST '/actors'
     "success": true
 }
 ```
+```
 PATCH '/movies/<int:movie_id>'
 - Updates a movie data based on the id 
 - Request Arguments: A JSON with title and a release_date 
@@ -171,6 +179,8 @@ PATCH '/movies/<int:movie_id>'
     "movie_id": 2,
     "success": true
 }
+```
+
 ```
 PATCH '/actors/<int:actor_id>'
 - Updates an actor data based on the id 
@@ -184,6 +194,7 @@ PATCH '/actors/<int:actor_id>'
 }
 ```
 
+```
 DELETE '/movies/<int:movie_id>'
 - Remove persistentle a movie from the database based on id 
 - Request Arguments: id of the movie eg:'/movies/1'
@@ -193,6 +204,8 @@ DELETE '/movies/<int:movie_id>'
     "id": 2,
     "success": true
 }
+```
+
 ```
 DELETE '/actors/<int:actor_id>'
 - Remove persistentle an actor from the database based on id 
@@ -208,7 +221,7 @@ DELETE '/actors/<int:actor_id>'
 
 ## API Testing
 To run the tests:
-
+```
 python test_app.py
 
 ``` 
@@ -221,9 +234,10 @@ python test_app.py
 422 - Unprocessable entity
 
 They have this format
-
+```
 {
     'success': False,
     'error': 404,
     'message': 'Resource not found'
 }
+```
