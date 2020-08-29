@@ -36,17 +36,18 @@ From within the  directory first ensure you are working using your created virtu
 
 To run the server, execute:
 
+```
 source setup.sh
 export FLASK_APP=app.py
 export FLASK_ENV=development
 flask run
-
-
+```
+```
 or 
 
 source setup.sh 
 python app.py
-
+```
 
 ## Roles and Permissions:
 
